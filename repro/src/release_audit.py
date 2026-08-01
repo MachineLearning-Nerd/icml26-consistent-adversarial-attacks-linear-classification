@@ -78,7 +78,10 @@ def audit_release(root: Path) -> dict[str, object]:
         if line.strip()
     ]
     allowlist_missing = [path for path in allowlist if not candidate.joinpath(path).is_file()]
-    text_suffixes = {".md", ".json", ".csv", ".py", ".toml", ".lock", ".svg", ".html", ".css", ".js"}
+    text_suffixes = {
+        ".md", ".json", ".csv", ".py", ".toml", ".lock", ".svg",
+        ".html", ".css", ".js", ".txt", ".sha256",
+    }
     non_text_allowlist = [
         path
         for path in allowlist
