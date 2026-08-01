@@ -13,12 +13,13 @@ import numpy as np
 
 from core import feasibility_certificate, mutated_condition, proposition_condition
 from latent_audit import audit_latent_theorems
+from quantifier_audit import audit_claim4_specification, audit_theorem42_indicator
 from theorem31 import audit_theorem31
 
 
 ROOT = Path(__file__).resolve().parents[2]
 SEEDS = [1031, 2081, 4093, 8179]
-ESTIMATED_CORES = 1
+ESTIMATED_CORES = 2
 SELECTED_FLAVOR = "cpu-upgrade"
 FIXED_COMMAND = "uv sync --frozen && .venv/bin/python repro/src/verify.py"
 
@@ -129,6 +130,8 @@ def main() -> int:
     proposition = run_proposition_trials()
     theorem31 = audit_theorem31(SEEDS)
     latent = audit_latent_theorems()
+    claim4 = audit_claim4_specification()
+    claim5 = audit_theorem42_indicator(SEEDS)
     result = {
         "schema_version": 1,
         "paper": "arXiv:2506.12454v1",
@@ -152,27 +155,31 @@ def main() -> int:
             "claim_1": proposition,
             "claim_2": theorem31,
             "claim_3": latent["claim_3"],
-            "claim_5": latent["claim_5"],
+            "claim_4": claim4,
+            "claim_5": claim5,
         },
-        "unresolved_claims": [4, 5],
+        "prior_routes": {"claim_5_route_1": latent["claim_5"]},
+        "unresolved_claims": [4],
     }
     result["runtime_seconds"] = time.perf_counter() - started
     result["all_passed"] = (
         proposition["passed"]
         and theorem31["verifier_passed"]
         and latent["claim_3"]["verifier_passed"]
-        and latent["claim_5"]["verifier_passed"]
+        and claim4["verifier_passed"]
+        and claim5["verifier_passed"]
         and not gpu_devices
     )
     print("BEGIN_MACHINE_READABLE_EVIDENCE")
     print(json.dumps(result, indent=2, sort_keys=True))
     print("END_MACHINE_READABLE_EVIDENCE")
     print(
-        "SUMMARY: claim_1={status}; claim_2={claim2}; claim_3={claim3}; claim_5={claim5}; mutation_control={control}; all_passed={passed}".format(
+        "SUMMARY: claim_1={status}; claim_2={claim2}; claim_3={claim3}; claim_4={claim4}; claim_5={claim5}; mutation_control={control}; all_passed={passed}".format(
             status=proposition["status"],
             claim2=theorem31["status"],
             claim3=latent["claim_3"]["status"],
-            claim5=latent["claim_5"]["status"],
+            claim4=claim4["status"],
+            claim5=claim5["status"],
             control=proposition["negative_control"]["status"],
             passed=result["all_passed"],
         )

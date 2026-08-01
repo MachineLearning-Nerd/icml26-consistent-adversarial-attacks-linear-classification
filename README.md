@@ -20,6 +20,7 @@ feasible and infeasible cases and requires a deliberately incorrect
 | `orx/judged-baseline-regression` | Preserve the accepted Proposition 1 check | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | VERIFIED in 400/400 cases; mutation rejected | Hugging Face `cpu-upgrade`, 64 CPUs allocated, 16 s |
 | `orx/claim-2-printed-formula-audit` | Test Theorem 3.1 exactly as printed | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | FALSIFIED: printed robust error 0.5000 versus definition-faithful 0.69146 | Hugging Face `cpu-upgrade`, 64 CPUs allocated, 31 s |
 | `orx/latent-theorem-integrity-audit` | Audit Theorems 4.1/4.2 against Appendix D | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending source-integrity verifier | Hugging Face `cpu-upgrade`, estimated 1 core |
+| `orx/metric-quantifier-and-specification-audit` | Audit Claim 4 reproducibility and Theorem 4.2 event algebra | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending independent correlated-Gaussian check | Hugging Face `cpu-upgrade`, estimated 2 cores |
 
 The environment is locked by `uv.lock`. Research computation is run only with
 OpenResearch on Hugging Face CPU hardware.

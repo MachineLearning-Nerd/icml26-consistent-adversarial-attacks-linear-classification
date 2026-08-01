@@ -42,3 +42,18 @@ conjugate updates, and accepts an appendix-consistent repaired control.
 Theorem 4.2 consumes `m` and `q`, but the displayed Theorem 4.1 system does not
 define them. Route 1 reports this concrete dependency blocker and the repeated
 label-direction mismatch without silently choosing a corrected theorem.
+
+## Claim 4 — BLOCKED, route 1
+
+Figure 5 does not publish enough settings or quantifiers to define a unique
+reproduction: the evaluation budget, loss/link, tuning domain, seeds, numeric
+table, large-psi threshold, and acceptance rule are absent. Equation (28) and
+Assumption 4.2 also disagree on latent-noise scaling.
+
+## Claim 5 — general event proof pending
+
+For every positive effective threshold and nondegenerate centered joint
+Gaussian, equation (43) omits the positive-probability half-strip
+`nu<0, -c<mu<=c`; equation (44) retains only one of two symmetry-related
+boundary regions. A correlated-Gaussian checker and `c=0` control are pending
+remote execution.
