@@ -22,6 +22,7 @@ feasible and infeasible cases and requires a deliberately incorrect
 | `orx/latent-theorem-integrity-audit` | Audit Theorems 4.1/4.2 against Appendix D | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending source-integrity verifier | Hugging Face `cpu-upgrade`, estimated 1 core |
 | `orx/metric-quantifier-and-specification-audit` | Audit Claim 4 reproducibility and Theorem 4.2 event algebra | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending independent correlated-Gaussian check | Hugging Face `cpu-upgrade`, estimated 2 cores |
 | `orx/claim-4-scaling-ambiguity` | Compare the two published latent-noise scalings | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending proportional-limit SNR audit | Hugging Face `cpu-upgrade`, estimated 2 cores |
+| `orx/claim-4-mechanism-decomposition` | Test the exact clean/boundary/robust compensation identity | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending decomposition and mutation checks | Hugging Face `cpu-upgrade`, estimated 2 cores |
 
 The environment is locked by `uv.lock`. Research computation is run only with
 OpenResearch on Hugging Face CPU hardware.

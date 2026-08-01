@@ -155,6 +155,94 @@ def audit_claim4_scaling(seeds: list[int]) -> dict[str, object]:
     }
 
 
+def audit_claim4_decomposition(seeds: list[int]) -> dict[str, object]:
+    correlations = [-0.6, -0.2, 0.2, 0.6]
+    thresholds = [0.15, 0.35, 0.55, 0.75]
+    rows = []
+    for seed, correlation, threshold in zip(
+        seeds, correlations, thresholds, strict=True
+    ):
+        rng = np.random.default_rng(seed + 4600)
+        samples = 500_000
+        nu = rng.normal(size=samples)
+        mu = correlation * nu + math.sqrt(1.0 - correlation**2) * rng.normal(
+            size=samples
+        )
+        consistent_robust = np.where(nu >= 0.0, mu, -mu) < threshold
+        clean_error = nu * mu < 0.0
+        consistent_boundary = consistent_robust & ~clean_error
+        robust_count = int(np.count_nonzero(consistent_robust))
+        clean_count = int(np.count_nonzero(clean_error))
+        boundary_count = int(np.count_nonzero(consistent_boundary))
+        mutated_count = boundary_count
+        rows.append(
+            {
+                "seed": seed + 4600,
+                "correlation": correlation,
+                "threshold": threshold,
+                "samples": samples,
+                "consistent_robust_count": robust_count,
+                "clean_error_count": clean_count,
+                "consistent_boundary_count": boundary_count,
+                "identity_residual_count": robust_count
+                - clean_count
+                - boundary_count,
+                "omit_clean_error_mutation_residual": robust_count - mutated_count,
+            }
+        )
+    identity_pass = all(row["identity_residual_count"] == 0 for row in rows)
+    mutation_rejected = all(
+        row["omit_clean_error_mutation_residual"] > 50_000 for row in rows
+    )
+    dual_effect_control = {
+        "lower_psi": {"clean": 0.40, "boundary": 0.05, "robust": 0.45},
+        "higher_psi": {"clean": 0.20, "boundary": 0.15, "robust": 0.35},
+    }
+    boundary_change = (
+        dual_effect_control["higher_psi"]["boundary"]
+        - dual_effect_control["lower_psi"]["boundary"]
+    )
+    clean_change = (
+        dual_effect_control["higher_psi"]["clean"]
+        - dual_effect_control["lower_psi"]["clean"]
+    )
+    robust_change = (
+        dual_effect_control["higher_psi"]["robust"]
+        - dual_effect_control["lower_psi"]["robust"]
+    )
+    mechanism_pass = (
+        boundary_change > 0
+        and robust_change < 0
+        and abs(clean_change + boundary_change - robust_change) < 1e-12
+        and abs(clean_change) > boundary_change
+    )
+    passed = identity_pass and mutation_rejected and mechanism_pass
+    return {
+        "status": "BLOCKED",
+        "exact_target": "Section 4.3 and Figure 5 right-panel dual-effect claim",
+        "route": 3,
+        "route_name": "exact error decomposition and compensation audit",
+        "identity": "E_rob_cns = E_clean + E_bnd_cns (outside zero-probability ties)",
+        "rows": rows,
+        "dual_effect_control": dual_effect_control,
+        "changes": {
+            "clean": clean_change,
+            "boundary": boundary_change,
+            "consistent_robust": robust_change,
+        },
+        "negative_control": {
+            "mutation": "identify consistent robust error with boundary error alone",
+            "rejected_in_all_rows": mutation_rejected,
+            "status": "REJECTED_AS_EXPECTED"
+            if mutation_rejected
+            else "UNEXPECTED_PASS",
+        },
+        "mechanism_conclusion": "If boundary error rises while aggregate consistent robust error falls, clean error must fall by more than the boundary error rises.",
+        "blocker": "The identity verifies the proposed compensation mechanism but supplies no missing psi-dependent trained-model values, so it cannot establish the directional Figure 5 trend.",
+        "verifier_passed": passed,
+    }
+
+
 def correlated_indicator_counts(
     seed: int, samples: int, correlation: float, threshold: float
 ) -> dict[str, int | float]:

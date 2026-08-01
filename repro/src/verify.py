@@ -14,6 +14,7 @@ import numpy as np
 from core import feasibility_certificate, mutated_condition, proposition_condition
 from latent_audit import audit_latent_theorems
 from quantifier_audit import (
+    audit_claim4_decomposition,
     audit_claim4_scaling,
     audit_claim4_specification,
     audit_theorem42_indicator,
@@ -135,7 +136,8 @@ def main() -> int:
     theorem31 = audit_theorem31(SEEDS)
     latent = audit_latent_theorems()
     claim4_route1 = audit_claim4_specification()
-    claim4 = audit_claim4_scaling(SEEDS)
+    claim4_route2 = audit_claim4_scaling(SEEDS)
+    claim4 = audit_claim4_decomposition(SEEDS)
     claim5 = audit_theorem42_indicator(SEEDS)
     result = {
         "schema_version": 1,
@@ -165,6 +167,7 @@ def main() -> int:
         },
         "prior_routes": {
             "claim_4_route_1": claim4_route1,
+            "claim_4_route_2": claim4_route2,
             "claim_5_route_1": latent["claim_5"],
         },
         "unresolved_claims": [4],

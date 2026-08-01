@@ -55,6 +55,11 @@ Equation (28) predicts constant SNR `(p/d)^2`; Assumption 4.2 predicts SNR
 vanishing as `1/d`. The remote verifier requires both independently derived
 slopes and variance formulas to match.
 
+Route 3 tests the exact decomposition
+`E_rob_cns = E_clean + E_bnd_cns` over two million correlated-Gaussian cases.
+It establishes the claimed compensation mechanism conditional on the two
+directions, but cannot manufacture the missing `psi`-dependent model results.
+
 ## Claim 5 — general event proof pending
 
 For every positive effective threshold and nondegenerate centered joint
