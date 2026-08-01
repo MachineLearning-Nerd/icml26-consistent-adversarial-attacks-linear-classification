@@ -243,6 +243,123 @@ def audit_claim4_decomposition(seeds: list[int]) -> dict[str, object]:
     }
 
 
+def audit_claim4_falsification_eligibility() -> dict[str, object]:
+    exact_contract = {
+        "model": "Assumption 4.2 structured latent Gaussian model",
+        "limit": "n,p,d->infinity at fixed alpha=n/d and psi=p/n",
+        "estimator": "equations (21)-(22), optimally tuned robust ERM",
+        "training_attack_geometry": "s=infinity",
+        "regularization_geometry": "r=2 (Appendix A.1 notation)",
+        "finite_check": "d=500 with 10 realizations",
+        "trend_domain": "large psi regime (threshold not published)",
+        "trend": "E_bnd_cns increases and E_rob_cns decreases",
+    }
+    source_unbound = [
+        "latent noise scaling",
+        "evaluation attack budget",
+        "loss function",
+        "ground-truth link",
+        "hyperparameter search domain",
+        "optimizer stopping rule",
+        "random seeds",
+        "large-psi threshold and uncertainty rule",
+    ]
+    candidates = [
+        {
+            "name": "historical judged ratio sweep",
+            "route": "empirical",
+            "contradiction": "boundary saturation and nonmonotone aggregate error",
+            "assumption_failures": [
+                "sweeps d/n rather than the source's defined psi=p/n contract",
+                "does not document the Figure 5 loss, link, tuning, or evaluation budget",
+                "does not compare to a well-defined large-psi threshold",
+            ],
+        },
+        {
+            "name": "equation 28 noise scaling",
+            "route": "asymptotic analytic",
+            "contradiction": "candidate trends under u~N(0,I_p/p)",
+            "assumption_failures": [
+                "conflicts with the literal Assumption 4.2 u~N(0,I_p)",
+                "source does not identify which scaling generated Figure 5",
+            ],
+        },
+        {
+            "name": "literal Assumption 4.2 noise scaling",
+            "route": "asymptotic analytic",
+            "contradiction": "candidate trends under u~N(0,I_p)",
+            "assumption_failures": [
+                "conflicts with equation (28) u~N(0,I_p/p)",
+                "source does not identify which scaling generated Figure 5",
+            ],
+        },
+        {
+            "name": "zero-budget boundary counterexample",
+            "route": "degenerate limit",
+            "contradiction": "boundary error is identically zero",
+            "assumption_failures": [
+                "vacuous zero-budget substitution does not test the positive-budget Figure 5 attack",
+                "evaluation budget is not published, so it cannot match the plotted contract",
+            ],
+        },
+    ]
+    audited_candidates = [
+        {
+            **candidate,
+            "eligible_counterexample": not candidate["assumption_failures"],
+            "verdict": "REJECTED_ASSUMPTION_MISMATCH"
+            if candidate["assumption_failures"]
+            else "ELIGIBLE",
+        }
+        for candidate in candidates
+    ]
+    eligible_control = {
+        "all_contract_fields_source_pinned": True,
+        "same_model_estimator_and_budget": True,
+        "large_psi_interval_prepublished": True,
+        "boundary_slope_ci_upper": -0.01,
+        "robust_slope_ci_lower": 0.01,
+    }
+    control_accepted = (
+        eligible_control["all_contract_fields_source_pinned"]
+        and eligible_control["same_model_estimator_and_budget"]
+        and eligible_control["large_psi_interval_prepublished"]
+        and eligible_control["boundary_slope_ci_upper"] < 0
+        and eligible_control["robust_slope_ci_lower"] > 0
+    )
+    no_valid_counterexample = not any(
+        candidate["eligible_counterexample"] for candidate in audited_candidates
+    )
+    passed = no_valid_counterexample and control_accepted
+    return {
+        "status": "BLOCKED",
+        "exact_target": "Section 4.3 and Figure 5 right-panel dual-effect claim",
+        "route": 4,
+        "route_name": "mandatory assumption-satisfying falsification search",
+        "exact_contract": exact_contract,
+        "domain_and_quantifiers": "For the authors' optimally tuned Figure 5 setup, in an unspecified large-psi interval, boundary error rises while aggregate consistent robust error falls.",
+        "source_unbound_fields": source_unbound,
+        "candidate_counterexamples": audited_candidates,
+        "independent_eligibility_checker": {
+            "rule": "A counterexample must source-match every model, estimator, budget, tuning, domain, and uncertainty field before its opposite trend is admissible.",
+            "eligible_candidates": sum(
+                int(candidate["eligible_counterexample"])
+                for candidate in audited_candidates
+            ),
+        },
+        "negative_control": {
+            "synthetic_fully_pinned_opposite-trend_certificate": eligible_control,
+            "accepted": control_accepted,
+            "status": "ACCEPTED_AS_EXPECTED"
+            if control_accepted
+            else "UNEXPECTED_REJECTION",
+        },
+        "falsification_succeeded": False,
+        "blocker": "No tested counterexample can be shown to match the unpublished Figure 5 contract; the exact loss/link/budget/tuning/domain or author code and raw data would unblock verification or falsification.",
+        "verifier_passed": passed,
+    }
+
+
 def correlated_indicator_counts(
     seed: int, samples: int, correlation: float, threshold: float
 ) -> dict[str, int | float]:

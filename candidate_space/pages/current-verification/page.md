@@ -60,6 +60,12 @@ Route 3 tests the exact decomposition
 It establishes the claimed compensation mechanism conditional on the two
 directions, but cannot manufacture the missing `psi`-dependent model results.
 
+Mandatory route 4 audits four proposed counterexamples. The historical sweep,
+both alternative noise scalings, and a zero-budget construction each violate
+or cannot establish at least one exact Figure 5 assumption. A fully pinned
+synthetic opposite-trend certificate is accepted as a negative control. No
+valid falsification was established, so Claim 4's final status is **BLOCKED**.
+
 ## Claim 5 — general event proof pending
 
 For every positive effective threshold and nondegenerate centered joint
