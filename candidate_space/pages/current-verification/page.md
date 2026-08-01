@@ -16,3 +16,13 @@ new evidence. Historical pages remain preserved at the judged revision
 - Negative control: full-norm mutation must be rejected.
 - Limitations: equality and non-ℓ₂ geometries are excluded from the numerical
   scope; Claims 2–5 remain unresolved in the baseline.
+
+## Claim 2 — printed-formula audit pending
+
+Theorem 3.1 equations (24)–(25) are tested exactly as printed. At `m=0`, the
+printed Gaussian integral is analytically `0.5` for all positive attack budgets,
+while Definition 2 plus Lemma 1 gives `Phi(epsilon_tilde)`. The candidate
+verifier includes four million bivariate-Gaussian samples, four dense
+dimension-512 constructions, an epsilon-zero non-falsification control, and a
+label-direction mutation control. Status remains **BLOCKED** until the remote
+run completes.

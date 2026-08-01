@@ -16,7 +16,8 @@ feasible and infeasible cases and requires a deliberately incorrect
 
 | Branch / experiment | Purpose | Exact run command | Assessment | Compute |
 | --- | --- | --- | --- | --- |
-| `orx/judged-baseline-regression` | Preserve the accepted Proposition 1 check | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending first baseline run | Hugging Face `cpu-upgrade`, estimated 1 core |
+| `orx/judged-baseline-regression` | Preserve the accepted Proposition 1 check | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | VERIFIED in 400/400 cases; mutation rejected | Hugging Face `cpu-upgrade`, 64 CPUs allocated, 16 s |
+| `orx/claim-2-printed-formula-audit` | Test Theorem 3.1 exactly as printed | `uv sync --frozen && .venv/bin/python repro/src/verify.py` | Pending remote falsification check | Hugging Face `cpu-upgrade`, estimated 2 cores |
 
 The environment is locked by `uv.lock`. Research computation is run only with
 OpenResearch on Hugging Face CPU hardware.
