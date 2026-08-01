@@ -1,0 +1,7 @@
+{
+  "claim_1": {"certificate": "orthogonal extremal attack", "agreement": "400/400", "passed": true},
+  "claim_2": {"analytic_gap": 0.19146246127401312, "mc_standard_error": 0.00023092365976521196, "finite_dimension_mean": 0.6924562500000001, "passed": true},
+  "claim_3": {"literal_system_closed": false, "appendix_repair_closed": true, "passed": true},
+  "claim_4": {"routes": ["source completeness", "scaling", "decomposition", "falsification eligibility"], "final_status": "BLOCKED", "passed": true},
+  "claim_5": {"gap_equals_omitted_half_strip_all_correlations": true, "boundary_ratio_near_two_all_correlations": true, "passed": true}
+}

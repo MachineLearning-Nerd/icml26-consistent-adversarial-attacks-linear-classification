@@ -1,0 +1,11 @@
+{
+  "claim_id": 3,
+  "paper_anchor": "Section 4.2, Theorem 4.1, equations (37)-(42); Appendix D, equation (119)",
+  "exact_target": "The displayed self-consistent system characterizes the order parameters m, q, V, and P.",
+  "acceptance": {
+    "all_declared_primal_order_parameters_have_defining_left_sides": true,
+    "displayed_conjugate_updates_agree_with_appendix_derivation": true,
+    "repaired_negative_control_is_closed": true
+  },
+  "verdict_values": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+<rect width="900" height="430" fill="#f8fafc"/><text x="45" y="48" font-family="sans-serif" font-size="26" font-weight="700" fill="#111827">Theorem 4.1 displayed system is not self-consistent</text>
+<rect x="55" y="90" width="340" height="250" rx="12" fill="#fee2e2" stroke="#dc2626"/><text x="80" y="125" font-family="sans-serif" font-size="19" font-weight="700" fill="#991b1b">Main text, equations (37)–(42)</text>
+<g font-family="monospace" font-size="17" fill="#7f1d1d"><text x="85" y="170">m̂,q̂,V̂,P̂ ← same RHS</text><text x="85" y="210">eq. 39 LHS: m̂,q̂,V̂,P̂</text><text x="85" y="250">eq. 40 LHS: m̂,q̂,V̂,P̂</text><text x="85" y="300">missing: m, q, V, P</text></g>
+<path d="M410 215 L490 215" stroke="#475569" stroke-width="5" marker-end="url(#a)"/><defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#475569"/></marker></defs>
+<rect x="510" y="90" width="335" height="250" rx="12" fill="#dcfce7" stroke="#15803d"/><text x="535" y="125" font-family="sans-serif" font-size="19" font-weight="700" fill="#166534">Appendix (119) control</text>
+<g font-family="monospace" font-size="16" fill="#14532d"><text x="540" y="168">m̂ ← ∂ωZ₀ f</text><text x="540" y="202">q̂ ← Z₀ f²</text><text x="540" y="236">V̂ ← −Z₀ ∂ωf</text><text x="540" y="270">P̂ ← y Z₀ f</text><text x="540" y="310">repaired LHS defines m,q,V,P</text></g>
+<text x="55" y="390" font-family="sans-serif" font-size="15" fill="#475569">Three conjugate updates conflict with the appendix; the appendix-consistent negative control is closed.</text></svg>

@@ -1,0 +1,8 @@
+{
+  "command": "marimo check notebooks/reproduction.py",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "runtime_seconds": 0.541841791,
+  "classification": "local static artifact inspection; no research computation"
+}

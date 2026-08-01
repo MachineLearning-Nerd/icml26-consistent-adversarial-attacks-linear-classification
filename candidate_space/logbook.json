@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "title": "Repro - On the Existence of Consistent Adversarial Attacks in High-Dimensional Models",
+  "emoji": "🎯",
+  "space_id": "DineshAI/PUIivg3GrO",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-PUIivg3GrO"
+  ],
+  "updated_at": "2026-08-02T00:00:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - On the Existence of Consistent Adversarial Attacks in High-Dimensional Models",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "current-verification",
+        "title": "Current verification (start here)",
+        "file": "pages/current-verification/page.md",
+        "children": []
+      },
+      {
+        "slug": "overview",
+        "title": "Historical rejected baseline — Overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      },
+      {
+        "slug": "claims",
+        "title": "Historical rejected baseline — Claims",
+        "file": "pages/claims/page.md",
+        "children": []
+      },
+      {
+        "slug": "evidence",
+        "title": "Historical rejected baseline — Evidence",
+        "file": "pages/evidence/page.md",
+        "children": []
+      },
+      {
+        "slug": "verification-run",
+        "title": "Historical rejected baseline — Verification run",
+        "file": "pages/verification-run/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Historical rejected baseline — Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 2181,
+  "revision": "1785572437432060332"
+}

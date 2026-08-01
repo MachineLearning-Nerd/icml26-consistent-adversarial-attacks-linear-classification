@@ -1,0 +1,18 @@
+{
+  "claim_id": 4,
+  "paper_anchor": "Section 4.3 and Figure 5 right panel",
+  "exact_target": "In the large-psi regime, consistent boundary error increases while aggregate consistent robust error decreases under optimally tuned robust ERM.",
+  "route": 1,
+  "route_name": "source-completeness and quantifier audit",
+  "required_contract_fields": [
+    "evaluation attack budget",
+    "loss",
+    "link",
+    "hyperparameter search domain",
+    "optimizer stopping rule",
+    "seeds",
+    "large-psi threshold",
+    "effect-size acceptance rule"
+  ],
+  "verdict_values": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}

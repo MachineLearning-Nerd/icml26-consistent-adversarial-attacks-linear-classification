@@ -1,0 +1,8 @@
+experiment,git_sha,estimated_cores,flavor,actual_cpu_allocation,gpu_devices,provider_runtime_seconds,verifier_runtime_seconds
+judged-baseline-regression,ed0da3ffa2421d736c7492fe0486d1bbfa520f1a,1,cpu-upgrade,64,none,16,0.0357
+claim-2-printed-formula-audit,2b496201810567de202e1a406aedfdb2e0aac1dc,2,cpu-upgrade,64,none,31,16.3916
+latent-theorem-integrity-audit,a16701ba0d0d8f5810a3f37cbadf3a72d3109e70,1,cpu-upgrade,64,none,31,16.0984
+metric-quantifier-and-specification-audit,ee25280db2cb664ff92ce2fa65559917207d1ec0,2,cpu-upgrade,64,none,37,17.3402
+claim-4-scaling-ambiguity,82f529af141507d9cbdc1ecf46d7fa6edd37ddc0,2,cpu-upgrade,64,none,31,13.6261
+claim-4-mechanism-decomposition,a966f5eb8b401c310f3398d2bb9c13b52b54c40a,2,cpu-upgrade,64,none,26,11.5859
+claim-4-falsification-eligibility,3688690d5ee0a644b06807b0dd6d0525be19edcc,2,cpu-upgrade,64,none,26,12.0887

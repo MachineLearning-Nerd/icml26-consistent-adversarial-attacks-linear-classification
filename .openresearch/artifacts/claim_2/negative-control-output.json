@@ -1,0 +1,9 @@
+{
+  "claim_1_full_norm_mutation": "REJECTED_AS_EXPECTED",
+  "claim_2_zero_budget": "NOT_REJECTED_AS_EXPECTED",
+  "claim_3_appendix_consistent_repair": "NOT_REJECTED_AS_EXPECTED",
+  "claim_4_complete_contract": "ACCEPTED_AS_EXPECTED",
+  "claim_4_drop_clean_error_mutation": "REJECTED_AS_EXPECTED",
+  "claim_4_fully_pinned_opposite_trend": "ACCEPTED_AS_EXPECTED",
+  "claim_5_zero_threshold": "NOT_REJECTED_AS_EXPECTED"
+}

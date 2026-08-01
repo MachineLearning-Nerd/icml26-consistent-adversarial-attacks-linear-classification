@@ -1,0 +1,17 @@
+{
+  "renderer": "rsvg-convert",
+  "result": "PASS",
+  "files": [
+    "headline.svg",
+    "claim2.svg",
+    "claim3.svg",
+    "claim4.svg",
+    "claim5.svg"
+  ],
+  "checks": [
+    "all SVGs rendered to PNG without error",
+    "titles, labels, legends, and values are visible",
+    "no clipped or overlapping evidence text",
+    "report-relative image paths exist"
+  ]
+}

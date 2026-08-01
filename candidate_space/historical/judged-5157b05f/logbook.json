@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "title": "Repro - On the Existence of Consistent Adversarial Attacks in High-Dimensional Models",
+  "emoji": "🎯",
+  "space_id": "DineshAI/PUIivg3GrO",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-PUIivg3GrO"
+  ],
+  "updated_at": "2026-08-01T08:20:37+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - On the Existence of Consistent Adversarial Attacks in High-Dimensional Models",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "overview",
+        "title": "Overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      },
+      {
+        "slug": "claims",
+        "title": "Claims",
+        "file": "pages/claims/page.md",
+        "children": []
+      },
+      {
+        "slug": "evidence",
+        "title": "Evidence",
+        "file": "pages/evidence/page.md",
+        "children": []
+      },
+      {
+        "slug": "verification-run",
+        "title": "Verification run",
+        "file": "pages/verification-run/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 2181,
+  "revision": "1785572437432060332"
+}

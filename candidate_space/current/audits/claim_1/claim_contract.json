@@ -1,0 +1,24 @@
+{
+  "claim_id": 1,
+  "paper_anchor": "Section 3.1, Proposition 1, equation (9)",
+  "source": "https://arxiv.org/pdf/2506.12454",
+  "source_version": "v1",
+  "statement": "For nonzero model margin, an l_q attack that preserves the linear target exists iff epsilon times the dual-norm distance of the orthogonal predictor component to span(w_star) is at least the absolute model margin.",
+  "assumptions": [
+    "w_star has Euclidean norm sqrt(d)",
+    "w_hat and x are d-dimensional",
+    "the unperturbed model margin is nonzero",
+    "the perturbation belongs to the closed l_q ball",
+    "target invariance is equivalent to <w_star, delta> = 0"
+  ],
+  "baseline_scope": "q=2; 400 deterministic strict non-boundary numerical cases",
+  "acceptance": {
+    "condition_certificate_agreement": "400/400",
+    "both_feasibility_classes_present": true,
+    "target_invariance_residual_max": 1e-10,
+    "budget_excess_max": 1e-12,
+    "mutated_formula_must_be_rejected": true,
+    "gpu_devices_must_be_absent": true
+  },
+  "verdict_values": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}

@@ -1,0 +1,12 @@
+{
+  "claim_id": 5,
+  "paper_anchor": "Section 4.2, Theorem 4.2, equations (43)-(44)",
+  "exact_target": "The displayed equations give exact asymptotic consistent robust and boundary errors using Theorem 4.1 order parameters.",
+  "route": 1,
+  "route_name": "source dependency and internal-consistency audit",
+  "acceptance": {
+    "dependency_defines_m_and_q": true,
+    "indicator_agrees_with_Definition_2_and_Lemma_1": true
+  },
+  "verdict_values": ["VERIFIED", "FALSIFIED", "BLOCKED"]
+}
