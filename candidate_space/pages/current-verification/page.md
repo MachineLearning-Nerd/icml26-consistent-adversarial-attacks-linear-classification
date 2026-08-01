@@ -50,6 +50,11 @@ reproduction: the evaluation budget, loss/link, tuning domain, seeds, numeric
 table, large-psi threshold, and acceptance rule are absent. Equation (28) and
 Assumption 4.2 also disagree on latent-noise scaling.
 
+Route 2 tests that scaling conflict at `d=125,250,500,1000` and fixed `p/d=2`.
+Equation (28) predicts constant SNR `(p/d)^2`; Assumption 4.2 predicts SNR
+vanishing as `1/d`. The remote verifier requires both independently derived
+slopes and variance formulas to match.
+
 ## Claim 5 — general event proof pending
 
 For every positive effective threshold and nondegenerate centered joint

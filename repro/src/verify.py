@@ -13,7 +13,11 @@ import numpy as np
 
 from core import feasibility_certificate, mutated_condition, proposition_condition
 from latent_audit import audit_latent_theorems
-from quantifier_audit import audit_claim4_specification, audit_theorem42_indicator
+from quantifier_audit import (
+    audit_claim4_scaling,
+    audit_claim4_specification,
+    audit_theorem42_indicator,
+)
 from theorem31 import audit_theorem31
 
 
@@ -130,7 +134,8 @@ def main() -> int:
     proposition = run_proposition_trials()
     theorem31 = audit_theorem31(SEEDS)
     latent = audit_latent_theorems()
-    claim4 = audit_claim4_specification()
+    claim4_route1 = audit_claim4_specification()
+    claim4 = audit_claim4_scaling(SEEDS)
     claim5 = audit_theorem42_indicator(SEEDS)
     result = {
         "schema_version": 1,
@@ -158,7 +163,10 @@ def main() -> int:
             "claim_4": claim4,
             "claim_5": claim5,
         },
-        "prior_routes": {"claim_5_route_1": latent["claim_5"]},
+        "prior_routes": {
+            "claim_4_route_1": claim4_route1,
+            "claim_5_route_1": latent["claim_5"],
+        },
         "unresolved_claims": [4],
     }
     result["runtime_seconds"] = time.perf_counter() - started

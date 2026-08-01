@@ -34,7 +34,9 @@ def audit_claim4_specification() -> dict[str, object]:
         "minimum_increase_or_decrease": None,
         "uncertainty_acceptance_rule": None,
     }
-    complete_control = {name: value or "specified-control-value" for name, value in required.items()}
+    complete_control = {
+        name: value or "specified-control-value" for name, value in required.items()
+    }
     control_missing = sorted(
         name for name, value in complete_control.items() if value is None
     )
@@ -57,6 +59,99 @@ def audit_claim4_specification() -> dict[str, object]:
         },
         "blocker": "The plotted experiment and its large-psi trend do not determine a unique executable claim contract.",
         "verifier_passed": blocked,
+    }
+
+
+def audit_claim4_scaling(seeds: list[int]) -> dict[str, object]:
+    dimensions = [125, 250, 500, 1000]
+    p_over_d = 2
+    samples_per_dimension = 1_000_000
+    rows = []
+    for dimension, seed in zip(dimensions, seeds, strict=True):
+        features = p_over_d * dimension
+        rng = np.random.default_rng(seed + 4400)
+        latent_coordinate = rng.normal(size=samples_per_dimension) / math.sqrt(
+            dimension
+        )
+        signal = math.sqrt(features / dimension) * latent_coordinate
+        noise_eq28 = rng.normal(size=samples_per_dimension) / math.sqrt(features)
+        noise_assumption42 = rng.normal(size=samples_per_dimension)
+        signal_variance = float(np.mean(signal * signal))
+        eq28_ratio = signal_variance / float(np.mean(noise_eq28 * noise_eq28))
+        assumption42_ratio = signal_variance / float(
+            np.mean(noise_assumption42 * noise_assumption42)
+        )
+        rows.append(
+            {
+                "seed": seed + 4400,
+                "dimension_d": dimension,
+                "features_p": features,
+                "samples": samples_per_dimension,
+                "empirical_signal_variance": signal_variance,
+                "eq28_empirical_snr": eq28_ratio,
+                "eq28_exact_snr": float(p_over_d * p_over_d),
+                "assumption42_empirical_snr": assumption42_ratio,
+                "assumption42_exact_snr": features / (dimension * dimension),
+            }
+        )
+    log_dimensions = np.log(np.asarray(dimensions, dtype=float))
+    eq28_slope = float(
+        np.polyfit(
+            log_dimensions,
+            np.log([row["eq28_empirical_snr"] for row in rows]),
+            1,
+        )[0]
+    )
+    assumption42_slope = float(
+        np.polyfit(
+            log_dimensions,
+            np.log([row["assumption42_empirical_snr"] for row in rows]),
+            1,
+        )[0]
+    )
+    exact_matches = all(
+        abs(float(row["eq28_empirical_snr"]) - float(row["eq28_exact_snr"]))
+        / float(row["eq28_exact_snr"])
+        < 0.015
+        and abs(
+            float(row["assumption42_empirical_snr"])
+            - float(row["assumption42_exact_snr"])
+        )
+        / float(row["assumption42_exact_snr"])
+        < 0.015
+        for row in rows
+    )
+    divergent_sequences = (
+        abs(eq28_slope) < 0.03 and abs(assumption42_slope + 1.0) < 0.03
+    )
+    passed = exact_matches and divergent_sequences
+    return {
+        "status": "BLOCKED",
+        "exact_target": "Section 4.3 and Figure 5 right-panel dual-effect claim",
+        "route": 2,
+        "route_name": "high-dimensional latent-noise scaling audit",
+        "fixed_ratio": "p/d=2",
+        "analytic_certificate": {
+            "feature_signal_variance": "p/d^2",
+            "equation_28_noise_variance": "1/p",
+            "equation_28_snr": "(p/d)^2, constant in the proportional limit",
+            "assumption_4_2_noise_variance": "1",
+            "assumption_4_2_snr": "p/d^2, vanishes as 1/d",
+        },
+        "rows": rows,
+        "log_log_slopes": {
+            "equation_28": eq28_slope,
+            "assumption_4_2": assumption42_slope,
+        },
+        "negative_control": {
+            "expected_equation_28_slope": 0.0,
+            "observed_equation_28_slope": eq28_slope,
+            "status": "NOT_REJECTED_AS_EXPECTED"
+            if abs(eq28_slope) < 0.03
+            else "UNEXPECTED_REJECTION",
+        },
+        "blocker": "The two published noise scalings define different proportional-limit experiments, so Claim 4 has no unique source-faithful asymptotic target.",
+        "verifier_passed": passed,
     }
 
 
