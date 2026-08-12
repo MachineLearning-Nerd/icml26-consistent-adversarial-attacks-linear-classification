@@ -40,6 +40,6 @@
   "live_judge_score": "3/10 historical",
   "forecast": "5-8/10 research forecast only",
   "publication_allowed": true,
-  "last_known_git_commit": "ea325ec6f830695fbab946d8a4b41982afae724f",
+  "last_known_git_commit": "be3cce5ef0af7c08e51369964bb691653158fcd5",
   "last_checkpoint": "2026-08-13"
 }
