@@ -41,3 +41,6 @@ Historical live score: 3/10. Projected 5–8/10 and best-supported 8/10 are fore
 - Per-claim contracts, raw outputs, checker outputs, controls, methods, source audits, and limitations are committed.
 - Literal printed claims are kept distinct from possible intended corrections.
 - Historical ORX branches are preserved under descriptive audit/release names after cleanup.
+- Reachable commit attribution is normalized to MachineLearning-Nerd.
+- The GitHub repository is renamed to icml26-consistent-adversarial-attacks-linear-classification.
+- The old ORX branch names are deleted; eight descriptive audit/release branches remain beside main.

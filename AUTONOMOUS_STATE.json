@@ -2,8 +2,8 @@
   "schema_version": 1,
   "paper": "arXiv:2506.12454v1",
   "openreview_id": "PUIivg3GrO",
-  "phase": "documentation_checkpoint_before_repository_rename",
-  "next_action": "normalize_attribution_rename_repository_and_publish_descriptive_branches",
+  "phase": "completed_scoped_audit_published",
+  "next_action": "update_collection_tracker_and_continue_with_next_repository",
   "completed_milestones": [
     "pinned_arxiv_html_and_pdf_sources_and_hashes",
     "recorded_five_claim_contracts",
@@ -14,7 +14,12 @@
     "falsified_theorem_4_2_as_printed_with_half_strip_certificate",
     "documented_literal_vs_intended_correction_boundary",
     "documented_claim_to_evidence_paths",
-    "documented_historical_branch_purposes"
+    "documented_historical_branch_purposes",
+    "normalized_reachable_commit_attribution",
+    "renamed_repository_to_icml26_consistent_adversarial_attacks_linear_classification",
+    "published_descriptive_audit_and_release_branches",
+    "deleted_obsolete_orx_branch_names",
+    "verified_remote_repository_state"
   ],
   "claim_statuses": {
     "claim_1": "verified_for_l2_dimension_64_strict_non_boundary_scope",
@@ -35,6 +40,6 @@
   "live_judge_score": "3/10 historical",
   "forecast": "5-8/10 research forecast only",
   "publication_allowed": true,
-  "last_known_git_commit": "14e7f57c87c53c6345117ef9fddcdf04542d053c",
+  "last_known_git_commit": "ea325ec6f830695fbab946d8a4b41982afae724f",
   "last_checkpoint": "2026-08-13"
 }

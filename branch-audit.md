@@ -41,9 +41,16 @@ Before publication:
 - [x] STATUS.md records the scientific and publication checkpoints.
 - [x] AUTONOMOUS_STATE.json records the next action and pinned sources.
 - [x] Target repository name is available.
-- [ ] Rewrite reachable commit identities.
-- [ ] Rename the GitHub repository.
-- [ ] Push descriptive branches and remove old ORX names.
-- [ ] Verify remote main, branch inventory, README blob, JSON parsing, and commit identities.
+- [x] Rewrite reachable commit identities.
+- [x] Rename the GitHub repository.
+- [x] Push descriptive branches and remove old ORX names.
+- [x] Verify remote main, branch inventory, README blob, JSON parsing, and commit identities.
 
-The final published state will be appended below after remote verification.
+## Published state
+
+- Repository: MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification
+- Default branch: main
+- Main before this final checkpoint commit: ea325ec6f830695fbab946d8a4b41982afae724f
+- Published branches: main plus audit/proposition-1-baseline, audit/theorem-3-1-printed-formula, audit/latent-theorem-integrity, audit/metric-quantifier-specification, audit/claim-4-scaling-ambiguity, audit/claim-4-mechanism-decomposition, audit/claim-4-falsification-eligibility, release/evaluator-visible-candidate
+- Deleted branch prefix: orx/
+- Reachable commit identity: MachineLearning-Nerd <37579156+MachineLearning-Nerd@users.noreply.github.com>
