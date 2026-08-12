@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "paper": "arXiv:2506.12454v1",
+  "openreview_id": "PUIivg3GrO",
+  "phase": "documentation_checkpoint_before_repository_rename",
+  "next_action": "normalize_attribution_rename_repository_and_publish_descriptive_branches",
+  "completed_milestones": [
+    "pinned_arxiv_html_and_pdf_sources_and_hashes",
+    "recorded_five_claim_contracts",
+    "verified_proposition_1_in_disclosed_l2_scope",
+    "falsified_theorem_3_1_as_printed_with_analytic_and_monte_carlo_certificate",
+    "falsified_theorem_4_1_as_printed_with_appendix_comparison",
+    "completed_four_claim_4_routes_without_overclaiming",
+    "falsified_theorem_4_2_as_printed_with_half_strip_certificate",
+    "documented_literal_vs_intended_correction_boundary",
+    "documented_claim_to_evidence_paths",
+    "documented_historical_branch_purposes"
+  ],
+  "claim_statuses": {
+    "claim_1": "verified_for_l2_dimension_64_strict_non_boundary_scope",
+    "claim_2": "falsified_as_printed_plausible_missing_sign_nu_correction",
+    "claim_3": "falsified_as_printed_displayed_system_not_closed",
+    "claim_4": "blocked_after_four_routes_missing_executable_figure_5_contract",
+    "claim_5": "falsified_as_printed_positive_threshold_half_strip_omitted"
+  },
+  "former_github_repository": "https://github.com/MachineLearning-Nerd/icml26-repro-PUIivg3GrO-on-the-existence-of-consistent-adversarial-attacks-in-high-dimensional-linea",
+  "target_github_repository": "https://github.com/MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification",
+  "canonical_branch": "main",
+  "historical_branch_count": 8,
+  "official_code_status": "no_separate_author_implementation_pinned_in_source_audit",
+  "paper_html_sha256": "83b475d685ce1c7b0988d027f3ad3d8e0ff95afeeb583bdd58f0a31bca7f8696",
+  "paper_pdf_sha256": "d57224430f16e29eca731470f2a756428aa2f53b2c9001dfb3a04ccd1d4f23ce",
+  "source_retrieved": "2026-08-02",
+  "compute_policy": "historical evidence used Hugging Face cpu-upgrade with 64 CPUs and no GPU; current changes are documentation and metadata only",
+  "live_judge_score": "3/10 historical",
+  "forecast": "5-8/10 research forecast only",
+  "publication_allowed": true,
+  "last_known_git_commit": "14e7f57c87c53c6345117ef9fddcdf04542d053c",
+  "last_checkpoint": "2026-08-13"
+}
