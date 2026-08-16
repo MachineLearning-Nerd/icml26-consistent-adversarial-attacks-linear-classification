@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this audit or its recorded outputs, please cite the original paper and this repository."
+title: "ICML 2026 Consistent Adversarial Attacks Claim Audit"
+version: "1.0.0"
+date-released: 2026-08-17
+authors:
+  - name: MachineLearning-Nerd
+repository-code: "https://github.com/MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification"
+url: "https://github.com/MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification"
+references:
+  - type: article
+    title: "On the existence of consistent adversarial attacks in high-dimensional linear classification"
+    authors:
+      - given-names: Matteo
+        family-names: Vilucchio
+      - given-names: Lenka
+        family-names: Zdeborova
+      - given-names: Bruno
+        family-names: Loureiro
+    year: 2025
+    url: "https://arxiv.org/abs/2506.12454"
+    identifiers:
+      - type: arxiv
+        value: "2506.12454"

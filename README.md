@@ -16,6 +16,24 @@ The current evidence package contains one verified finite-dimensional propositio
 
 The previous live judged score is 3/10. The projected 5–8/10 range and best-supported 8/10 value are forecasts, not judge results.
 
+## Audit dossier
+
+The standardized audit record is split into small, reviewable files:
+
+- [CLAIM_EVIDENCE.md](CLAIM_EVIDENCE.md) maps every paper claim to its producer, raw result, checker, control, and limitation.
+- [SOURCE_AUDIT.md](SOURCE_AUDIT.md) records the pinned paper sources, theorem anchors, and literal-versus-intended boundary.
+- [BRANCH_AUDIT.md](BRANCH_AUDIT.md) records published branches, former workspace labels, tips, and attribution.
+- [ENVIRONMENT.md](ENVIRONMENT.md) records the fixed command, lockfile, evidence revision, seeds, and compute boundary.
+- [REPORT.md](REPORT.md) states the scoped decision and evaluation boundary.
+- [CITATION.cff](CITATION.cff) and [AUTHOR_THANK_YOU.md](AUTHOR_THANK_YOU.md) provide citation and author acknowledgement.
+- [EVIDENCE_MANIFEST.json](EVIDENCE_MANIFEST.json) content-addresses the
+  published dossier and evidence inputs.
+- [verify_final.py](verify_final.py) performs fail-closed checks on a local or fresh clone.
+
+The raw/checker/control package under [evidence](evidence) remains the
+scientific evidence. The dossier documents it and does not silently replace a
+printed formula with a plausible correction.
+
 ## Paper and provenance
 
 | Field | Record |

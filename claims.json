@@ -1,0 +1,110 @@
+{
+  "schema_version": 2,
+  "repository": "MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification",
+  "previous_repository": "MachineLearning-Nerd/icml26-repro-PUIivg3GrO-on-the-existence-of-consistent-adversarial-attacks-in-high-dimensional-linea",
+  "overall_status": "VERIFIED_CLAIM_1_FALSIFIED_CLAIMS_2_3_5_BLOCKED_CLAIM_4",
+  "paper": {
+    "title": "On the existence of consistent adversarial attacks in high-dimensional linear classification",
+    "arxiv": "2506.12454v1",
+    "openreview": "PUIivg3GrO",
+    "authors": [
+      "Matteo Vilucchio",
+      "Lenka Zdeborová",
+      "Bruno Loureiro"
+    ],
+    "venue_record": "ICML 2026",
+    "html_sha256": "83b475d685ce1c7b0988d027f3ad3d8e0ff95afeeb583bdd58f0a31bca7f8696",
+    "pdf_sha256": "d57224430f16e29eca731470f2a756428aa2f53b2c9001dfb3a04ccd1d4f23ce",
+    "official_code": null,
+    "official_code_status": "no_separate_author_implementation_pinned_in_source_audit"
+  },
+  "claims": [
+    {
+      "id": "C1",
+      "paper_anchor": "Proposition 1, Section 3.1",
+      "status": "VERIFIED",
+      "scope": "l2, dimension 64, strict non-boundary finite certificate",
+      "producer": "repro/src/verify.py::run_proposition_trials",
+      "independent_checker": "repro/src/core.py::feasibility_certificate",
+      "evidence": [
+        "evidence/results.json",
+        "evidence/checker-output.json",
+        "evidence/control-output.json",
+        ".openresearch/artifacts/claim_1/"
+      ],
+      "limitation": "Does not replace the proof for every lq geometry or decide the source's equality convention."
+    },
+    {
+      "id": "C2",
+      "paper_anchor": "Theorem 3.1, equations (24)-(27)",
+      "status": "FALSIFIED",
+      "scope": "literal printed indicator at m=0, q=1, l2, positive rescaled budget",
+      "producer": "repro/src/theorem31.py::audit_theorem31",
+      "independent_checker": "evidence/checker-output.json::claim_2",
+      "evidence": [
+        "evidence/results.json",
+        "evidence/checker-output.json",
+        "evidence/control-output.json",
+        ".openresearch/artifacts/claim_2/"
+      ],
+      "limitation": "A plausible missing-sign correction is reported but not substituted."
+    },
+    {
+      "id": "C3",
+      "paper_anchor": "Theorem 4.1, equations (37)-(42)",
+      "status": "FALSIFIED",
+      "scope": "literal displayed latent self-consistent system",
+      "producer": "repro/src/latent_audit.py::audit_latent_theorems",
+      "independent_checker": "evidence/checker-output.json::claim_3",
+      "evidence": [
+        "evidence/results.json",
+        "evidence/checker-output.json",
+        "evidence/control-output.json",
+        ".openresearch/artifacts/claim_3/"
+      ],
+      "limitation": "Does not assert that the appendix repair is the unique intended theorem."
+    },
+    {
+      "id": "C4",
+      "paper_anchor": "Section 4.3 and Figure 5 right panel",
+      "status": "BLOCKED",
+      "scope": "source-faithful executable contract for the large-psi trend",
+      "producer": "repro/src/quantifier_audit.py::audit_claim4_falsification_eligibility",
+      "independent_checker": "evidence/checker-output.json::claim_4",
+      "evidence": [
+        "evidence/results.json",
+        "evidence/checker-output.json",
+        "evidence/control-output.json",
+        ".openresearch/artifacts/claim_4/",
+        "candidate_space/current/release/visibility-matrix.md"
+      ],
+      "limitation": "Missing loss, link, budget, tuning, seeds, threshold, uncertainty, and noise-scaling fields prevent a unique reproduction."
+    },
+    {
+      "id": "C5",
+      "paper_anchor": "Theorem 4.2, equations (43)-(44)",
+      "status": "FALSIFIED",
+      "scope": "literal positive-threshold indicator and dependency on Theorem 4.1",
+      "producer": "repro/src/quantifier_audit.py::audit_theorem42_indicator",
+      "independent_checker": "evidence/checker-output.json::claim_5",
+      "evidence": [
+        "evidence/results.json",
+        "evidence/checker-output.json",
+        "evidence/control-output.json",
+        ".openresearch/artifacts/claim_5/"
+      ],
+      "limitation": "Does not solve a guessed repaired latent system."
+    }
+  ],
+  "attribution": {
+    "name": "MachineLearning-Nerd",
+    "email": "37579156+MachineLearning-Nerd@users.noreply.github.com",
+    "author_and_committer_required": true,
+    "co_author_trailers_allowed": false
+  },
+  "evaluation_boundary": {
+    "historical_judge_score": "3/10",
+    "current_score_claim": null,
+    "forecast": "5-8/10 research forecast only"
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "paper": "arXiv:2506.12454v1",
   "openreview_id": "PUIivg3GrO",
-  "phase": "completed_scoped_audit_published",
-  "next_action": "update_collection_tracker_and_continue_with_next_repository",
+  "phase": "dossier_ready_for_publication",
+  "next_action": "publish_dossier_then_verify_fresh_clone_and_update_collection_tracker",
   "completed_milestones": [
     "pinned_arxiv_html_and_pdf_sources_and_hashes",
     "recorded_five_claim_contracts",
@@ -19,27 +19,51 @@
     "renamed_repository_to_icml26_consistent_adversarial_attacks_linear_classification",
     "published_descriptive_audit_and_release_branches",
     "deleted_obsolete_orx_branch_names",
-    "verified_remote_repository_state"
+    "verified_remote_repository_state",
+    "added_standardized_audit_dossier"
   ],
   "claim_statuses": {
-    "claim_1": "verified_for_l2_dimension_64_strict_non_boundary_scope",
-    "claim_2": "falsified_as_printed_plausible_missing_sign_nu_correction",
-    "claim_3": "falsified_as_printed_displayed_system_not_closed",
-    "claim_4": "blocked_after_four_routes_missing_executable_figure_5_contract",
-    "claim_5": "falsified_as_printed_positive_threshold_half_strip_omitted"
+    "claim_1": "VERIFIED",
+    "claim_2": "FALSIFIED",
+    "claim_3": "FALSIFIED",
+    "claim_4": "BLOCKED",
+    "claim_5": "FALSIFIED"
   },
   "former_github_repository": "https://github.com/MachineLearning-Nerd/icml26-repro-PUIivg3GrO-on-the-existence-of-consistent-adversarial-attacks-in-high-dimensional-linea",
   "target_github_repository": "https://github.com/MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification",
   "canonical_branch": "main",
+  "pre_dossier_main_commit": "48cdacb0831167e621f8c999f08c210b40f720c8",
+  "expected_branches": [
+    "main",
+    "audit/claim-4-falsification-eligibility",
+    "audit/claim-4-mechanism-decomposition",
+    "audit/claim-4-scaling-ambiguity",
+    "audit/latent-theorem-integrity",
+    "audit/metric-quantifier-specification",
+    "audit/proposition-1-baseline",
+    "audit/theorem-3-1-printed-formula",
+    "release/evaluator-visible-candidate"
+  ],
   "historical_branch_count": 8,
   "official_code_status": "no_separate_author_implementation_pinned_in_source_audit",
   "paper_html_sha256": "83b475d685ce1c7b0988d027f3ad3d8e0ff95afeeb583bdd58f0a31bca7f8696",
   "paper_pdf_sha256": "d57224430f16e29eca731470f2a756428aa2f53b2c9001dfb3a04ccd1d4f23ce",
+  "science_evidence_commit": "3688690d5ee0a644b06807b0dd6d0525be19edcc",
+  "uv_lock_sha256": "b2508cf35b49d001059c7e47e99a3f3b8ad7837209855298d1684391455583d1",
   "source_retrieved": "2026-08-02",
-  "compute_policy": "historical evidence used Hugging Face cpu-upgrade with 64 CPUs and no GPU; current changes are documentation and metadata only",
+  "compute_policy": "historical_evidence_used_hugging_face_cpu_upgrade_64_cpus_no_gpu; dossier_changes_are_documentation_metadata_and_publication_state",
   "live_judge_score": "3/10 historical",
   "forecast": "5-8/10 research forecast only",
+  "recovery_bundle": {
+    "path": "/tmp/icml-adversarial-before-dossier.aBJ6Ya/adversarial-before-dossier.bundle",
+    "sha256": "71f83eaf283004a9b1c356521a9a5ea2b2039381ba752a0a7a8d36e89991a0d2",
+    "verified_complete": true
+  },
+  "canonical_identity": {
+    "name": "MachineLearning-Nerd",
+    "email": "37579156+MachineLearning-Nerd@users.noreply.github.com"
+  },
   "publication_allowed": true,
-  "last_known_git_commit": "be3cce5ef0af7c08e51369964bb691653158fcd5",
-  "last_checkpoint": "2026-08-13"
+  "last_known_git_commit": "48cdacb0831167e621f8c999f08c210b40f720c8",
+  "last_checkpoint": "2026-08-17"
 }

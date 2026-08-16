@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "repository": "MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification",
+  "paper": {
+    "title": "On the existence of consistent adversarial attacks in high-dimensional linear classification",
+    "arxiv": "2506.12454v1",
+    "openreview": "PUIivg3GrO",
+    "source_html_sha256": "83b475d685ce1c7b0988d027f3ad3d8e0ff95afeeb583bdd58f0a31bca7f8696",
+    "source_pdf_sha256": "d57224430f16e29eca731470f2a756428aa2f53b2c9001dfb3a04ccd1d4f23ce"
+  },
+  "claim_statuses": {
+    "C1": "VERIFIED",
+    "C2": "FALSIFIED",
+    "C3": "FALSIFIED",
+    "C4": "BLOCKED",
+    "C5": "FALSIFIED"
+  },
+  "content_addressed_artifacts": [
+    {
+      "path": ".openresearch/artifacts/claim_1/checker-output.json",
+      "sha256": "0cdb73bb6c4b129037cc12390622348bbb06c88a90444bf0f25722a1d28d7b5d"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_1/claim_contract.json",
+      "sha256": "59caa3b5ce93c106b6620bc7989f16ed9193a98618b7d99983faa7863740626b"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_1/limitations.md",
+      "sha256": "9d947ca0da63ac600929bc9b1fc75de26406cb48ac5743070346629976dd7e03"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_1/method.md",
+      "sha256": "13342d836a148f933fbcb4ab5003d2fc5ef7ef94b7c2cfaeb7c1aed109ea578f"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_1/negative-control-output.json",
+      "sha256": "fc26db1edc3111f8b0f5915fd8b2d54cc507f6ba5552c63d732ec360a52f4f08"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_1/raw_results.json",
+      "sha256": "073c3ba90dea7d811e80e4dd98a8629236205c231be421f4c1bb994f491d6545"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_1/source_audit.md",
+      "sha256": "a1b25ac546c8b595888dfca38b96fba93555a22510d32eff84c1b44ecc2e14ae"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_2/checker-output.json",
+      "sha256": "0cdb73bb6c4b129037cc12390622348bbb06c88a90444bf0f25722a1d28d7b5d"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_2/claim_contract.json",
+      "sha256": "1cd76686be752bc9454a9ab309d23503f37b69617e77c89369502187dbe820af"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_2/limitations.md",
+      "sha256": "272faa3217984b354297189e23656e3d15fc0d3b6327428b3db4521a57d4aafb"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_2/method.md",
+      "sha256": "b923149a6d112009d869fa0b9d3aa828859e5d37541004ae504da6102e38f335"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_2/negative-control-output.json",
+      "sha256": "fc26db1edc3111f8b0f5915fd8b2d54cc507f6ba5552c63d732ec360a52f4f08"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_2/raw_results.json",
+      "sha256": "073c3ba90dea7d811e80e4dd98a8629236205c231be421f4c1bb994f491d6545"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_2/source_audit.md",
+      "sha256": "65ad40e05e76298957c310c4d55b9e9847265e4ceecfeff9516f30f8d668655f"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_3/checker-output.json",
+      "sha256": "0cdb73bb6c4b129037cc12390622348bbb06c88a90444bf0f25722a1d28d7b5d"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_3/claim_contract.json",
+      "sha256": "f1601458819cbf768af363b284bc4bda1b071a9a027f2b5a6c820444cf6670e8"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_3/limitations.md",
+      "sha256": "38449ac01b68c87b8fc666ade010763aa127dde21dce6bfade4370059762d427"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_3/method.md",
+      "sha256": "cdbcf79afcb9e0f58cbd9c43de94149fb0b79d85264d1578311d90e44093c2ed"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_3/negative-control-output.json",
+      "sha256": "fc26db1edc3111f8b0f5915fd8b2d54cc507f6ba5552c63d732ec360a52f4f08"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_3/raw_results.json",
+      "sha256": "073c3ba90dea7d811e80e4dd98a8629236205c231be421f4c1bb994f491d6545"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_3/source_audit.md",
+      "sha256": "5a030d69408c5faa27bfd8fa16d618a6b59be56d0eadf29333666ef3eb300f7d"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/checker-output.json",
+      "sha256": "0cdb73bb6c4b129037cc12390622348bbb06c88a90444bf0f25722a1d28d7b5d"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/claim_contract.json",
+      "sha256": "37dba8965f7fac5477dfe463c7a159ca2395e24edea0f075a51a809993282873"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/limitations.md",
+      "sha256": "d4fdc296fcbc5360d23d0a776b36b47835687f342df88c5bf9778f1b827feed1"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/method.md",
+      "sha256": "266a8b6afc1bb352e8aa7b72b9a3e27dafbd42734c8e651bbdb5309a9dacfa76"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/negative-control-output.json",
+      "sha256": "fc26db1edc3111f8b0f5915fd8b2d54cc507f6ba5552c63d732ec360a52f4f08"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/raw_results.json",
+      "sha256": "073c3ba90dea7d811e80e4dd98a8629236205c231be421f4c1bb994f491d6545"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/route_2.md",
+      "sha256": "ed0fbacfdd1986132f3f7933d5ef2853d8a28fb448bbfe75d30d481b43b23cd7"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/route_3.md",
+      "sha256": "642363915f87c6bc5da00649c527ad5985e0d3cdfc5b3e148cfcc58c1125b75a"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/route_4.md",
+      "sha256": "b25483ca5e9a27e3ea124162810ac254cd943f7621d8411fa8fbe7f72a424629"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_4/source_audit.md",
+      "sha256": "0fb0d794b479ecfcdc8ccb371d8728e67d3d6a06a1e2fccba423b1ab779d73ef"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/checker-output.json",
+      "sha256": "0cdb73bb6c4b129037cc12390622348bbb06c88a90444bf0f25722a1d28d7b5d"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/claim_contract.json",
+      "sha256": "cade7c39fefacd04135574ca5c9bfbd155264a3ff2bc985f37edd1cba17eed9b"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/limitations.md",
+      "sha256": "e9698af07c8cacb6b42bbe7dc28deb677ecf79c4a5bc1f2976227641d438b988"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/method.md",
+      "sha256": "f9b3b0b5feb4bf94b33154a318fe2e65d58ed0033656f5a205a815bb85580b02"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/negative-control-output.json",
+      "sha256": "fc26db1edc3111f8b0f5915fd8b2d54cc507f6ba5552c63d732ec360a52f4f08"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/raw_results.json",
+      "sha256": "073c3ba90dea7d811e80e4dd98a8629236205c231be421f4c1bb994f491d6545"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/route_2.md",
+      "sha256": "81e338ef7c73c362488055c61d3458c655fa8c7207e59c3a3687a5353a5ae4d5"
+    },
+    {
+      "path": ".openresearch/artifacts/claim_5/source_audit.md",
+      "sha256": "28b3f3e78c97093234b39c8b2b822c62112dd2ec734845fb24b18e9675dd89bd"
+    },
+    {
+      "path": "AUTHOR_THANK_YOU.md",
+      "sha256": "ecf48978d47b40f50b7ebea55d475c3825eeeaaddbdb2582d16f9432e55a6684"
+    },
+    {
+      "path": "BRANCH_AUDIT.md",
+      "sha256": "071bd1dbdeafa076dd396cf094db7116b51c2c3af327657bcb78cb7ffde2eb23"
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "a5300d2a3482a241d0bc6f4523d6bf854cc9d4fd825df6cfa19b58abc8d2c21e"
+    },
+    {
+      "path": "CLAIM_EVIDENCE.md",
+      "sha256": "b925b11c451170458b2a001f2c40ca85c91d3778e391113039757ebb2e83394b"
+    },
+    {
+      "path": "ENVIRONMENT.md",
+      "sha256": "4206d375c350cfe139f235255d623934c376d852b3d59be64f07b47b157ba678"
+    },
+    {
+      "path": "README.md",
+      "sha256": "398cd62fd81336fd623fe0d6bb077a02830acc4c1fc9fdbdabb256ba7655cc52"
+    },
+    {
+      "path": "REPORT.md",
+      "sha256": "0190fa7274e4eeed1035db83bb340e21c5447ee15ccf90add46d24fb8f1ddc21"
+    },
+    {
+      "path": "SOURCE_AUDIT.md",
+      "sha256": "7fbf247dcaaed20dd356bc404ff921764f6267e0b105883ad871788abbcd8d81"
+    },
+    {
+      "path": "STATUS.md",
+      "sha256": "dd5e0d35bd80363abb3b400b651002e4c7bfae5dbecc32ddebd6bc0a849e1a63"
+    },
+    {
+      "path": "candidate_space/current/data/checker-output.json",
+      "sha256": "0cdb73bb6c4b129037cc12390622348bbb06c88a90444bf0f25722a1d28d7b5d"
+    },
+    {
+      "path": "candidate_space/current/data/control-output.json",
+      "sha256": "fc26db1edc3111f8b0f5915fd8b2d54cc507f6ba5552c63d732ec360a52f4f08"
+    },
+    {
+      "path": "candidate_space/current/data/results.json",
+      "sha256": "073c3ba90dea7d811e80e4dd98a8629236205c231be421f4c1bb994f491d6545"
+    },
+    {
+      "path": "candidate_space/current/data/runtime.csv",
+      "sha256": "1365f832f9287aabcdf68446a0738008312cc61a613191eea9d8ff99bdb9fc14"
+    },
+    {
+      "path": "claims.json",
+      "sha256": "46d8184577f7a030e14745e858f53aa459dd9ad62524741d0a105227f978c817"
+    },
+    {
+      "path": "evidence/checker-output.json",
+      "sha256": "0cdb73bb6c4b129037cc12390622348bbb06c88a90444bf0f25722a1d28d7b5d"
+    },
+    {
+      "path": "evidence/control-output.json",
+      "sha256": "fc26db1edc3111f8b0f5915fd8b2d54cc507f6ba5552c63d732ec360a52f4f08"
+    },
+    {
+      "path": "evidence/results.json",
+      "sha256": "073c3ba90dea7d811e80e4dd98a8629236205c231be421f4c1bb994f491d6545"
+    },
+    {
+      "path": "evidence/runtime.csv",
+      "sha256": "1365f832f9287aabcdf68446a0738008312cc61a613191eea9d8ff99bdb9fc14"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "994a1046f158de5a304835d7f42198f70d6b4ff07a8fc353dcdad1bc1ae5c926"
+    },
+    {
+      "path": "release/release-report.md",
+      "sha256": "dad24ef7f90d7223248dbc6a2596569209492a6ece0288154814945334181566"
+    },
+    {
+      "path": "release/visibility-matrix.md",
+      "sha256": "ab09455c2c821245c561914cadcfa241fc4de2a6d54b1b9bbb42e28645635014"
+    },
+    {
+      "path": "reports/reproduction/report.md",
+      "sha256": "4ccc18383bdd38ac1d664e7f3d80e70f5504e8d2d6f82d534646b718b910d053"
+    },
+    {
+      "path": "repro/src/core.py",
+      "sha256": "33f85b4f715bfe1bfc1d35ca3dd01617ee0cabc701a4ae9c82cbacd3a36f4090"
+    },
+    {
+      "path": "repro/src/latent_audit.py",
+      "sha256": "e729fba7234525ac8753848e87b86cbebca45204b894cba294815f06489419b4"
+    },
+    {
+      "path": "repro/src/quantifier_audit.py",
+      "sha256": "f9a1bee6afc704d853eeec575aaf189de224a5bc0b1a5ff34da1e63050622865"
+    },
+    {
+      "path": "repro/src/release_audit.py",
+      "sha256": "d0932961738c816808efc522c1775120247684f0a9755edd2e0a762de5ed154b"
+    },
+    {
+      "path": "repro/src/theorem31.py",
+      "sha256": "ecc67c1259306b5af8e0a58a4513ea1738763e195bc416627c9985ed525fe576"
+    },
+    {
+      "path": "repro/src/verify.py",
+      "sha256": "86525e560bcf2e612acf1d4a1bb4a82cc82832798bdef44f52cf931fde28b11c"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "b2508cf35b49d001059c7e47e99a3f3b8ad7837209855298d1684391455583d1"
+    },
+    {
+      "path": "verify_final.py",
+      "sha256": "636af9c1712b3feef8c31f8c6611df7813a1605083abf83abcfdd164ea058c37"
+    }
+  ],
+  "required_audit_files": [
+    "README.md",
+    "STATUS.md",
+    "REPORT.md",
+    "CLAIM_EVIDENCE.md",
+    "SOURCE_AUDIT.md",
+    "BRANCH_AUDIT.md",
+    "ENVIRONMENT.md",
+    "AUTHOR_THANK_YOU.md",
+    "CITATION.cff",
+    "claims.json",
+    "EVIDENCE_MANIFEST.json",
+    "verify_final.py"
+  ],
+  "required_evidence_files": [
+    "evidence/results.json",
+    "evidence/checker-output.json",
+    "evidence/control-output.json",
+    "evidence/runtime.csv",
+    "candidate_space/current/data/results.json",
+    "candidate_space/current/data/checker-output.json",
+    "candidate_space/current/data/control-output.json",
+    "candidate_space/current/data/runtime.csv",
+    "reports/reproduction/report.md",
+    "release/visibility-matrix.md",
+    "release/release-report.md",
+    "repro/src/core.py",
+    "repro/src/theorem31.py",
+    "repro/src/latent_audit.py",
+    "repro/src/quantifier_audit.py",
+    "repro/src/release_audit.py",
+    "repro/src/verify.py",
+    ".openresearch/artifacts/claim_1/claim_contract.json",
+    ".openresearch/artifacts/claim_1/method.md",
+    ".openresearch/artifacts/claim_1/source_audit.md",
+    ".openresearch/artifacts/claim_1/limitations.md",
+    ".openresearch/artifacts/claim_1/raw_results.json",
+    ".openresearch/artifacts/claim_1/checker-output.json",
+    ".openresearch/artifacts/claim_1/negative-control-output.json",
+    ".openresearch/artifacts/claim_2/claim_contract.json",
+    ".openresearch/artifacts/claim_2/method.md",
+    ".openresearch/artifacts/claim_2/source_audit.md",
+    ".openresearch/artifacts/claim_2/limitations.md",
+    ".openresearch/artifacts/claim_2/raw_results.json",
+    ".openresearch/artifacts/claim_2/checker-output.json",
+    ".openresearch/artifacts/claim_2/negative-control-output.json",
+    ".openresearch/artifacts/claim_3/claim_contract.json",
+    ".openresearch/artifacts/claim_3/method.md",
+    ".openresearch/artifacts/claim_3/source_audit.md",
+    ".openresearch/artifacts/claim_3/limitations.md",
+    ".openresearch/artifacts/claim_3/raw_results.json",
+    ".openresearch/artifacts/claim_3/checker-output.json",
+    ".openresearch/artifacts/claim_3/negative-control-output.json",
+    ".openresearch/artifacts/claim_4/claim_contract.json",
+    ".openresearch/artifacts/claim_4/method.md",
+    ".openresearch/artifacts/claim_4/source_audit.md",
+    ".openresearch/artifacts/claim_4/limitations.md",
+    ".openresearch/artifacts/claim_4/raw_results.json",
+    ".openresearch/artifacts/claim_4/checker-output.json",
+    ".openresearch/artifacts/claim_4/negative-control-output.json",
+    ".openresearch/artifacts/claim_5/claim_contract.json",
+    ".openresearch/artifacts/claim_5/method.md",
+    ".openresearch/artifacts/claim_5/source_audit.md",
+    ".openresearch/artifacts/claim_5/limitations.md",
+    ".openresearch/artifacts/claim_5/raw_results.json",
+    ".openresearch/artifacts/claim_5/checker-output.json",
+    ".openresearch/artifacts/claim_5/negative-control-output.json",
+    ".openresearch/artifacts/claim_4/route_2.md",
+    ".openresearch/artifacts/claim_4/route_3.md",
+    ".openresearch/artifacts/claim_4/route_4.md",
+    ".openresearch/artifacts/claim_5/route_2.md"
+  ],
+  "required_evidence_directories": [
+    ".openresearch/artifacts/claim_1",
+    ".openresearch/artifacts/claim_2",
+    ".openresearch/artifacts/claim_3",
+    ".openresearch/artifacts/claim_4",
+    ".openresearch/artifacts/claim_5",
+    "candidate_space/current/code",
+    "candidate_space/current/data",
+    "candidate_space/current/audits/claim_1",
+    "candidate_space/current/audits/claim_2",
+    "candidate_space/current/audits/claim_3",
+    "candidate_space/current/audits/claim_4",
+    "candidate_space/current/audits/claim_5"
+  ],
+  "branches": {
+    "expected_final": [
+      "main",
+      "audit/claim-4-falsification-eligibility",
+      "audit/claim-4-mechanism-decomposition",
+      "audit/claim-4-scaling-ambiguity",
+      "audit/latent-theorem-integrity",
+      "audit/metric-quantifier-specification",
+      "audit/proposition-1-baseline",
+      "audit/theorem-3-1-printed-formula",
+      "release/evaluator-visible-candidate"
+    ],
+    "historical_remote_branch_count": 9,
+    "legacy_prefixes_removed": [
+      "orx/"
+    ],
+    "evidence_branches_retained": true
+  },
+  "external_evaluation_boundary": {
+    "historical_score": "3/10",
+    "current_score_claim": null,
+    "forecast": "5-8/10 research forecast only",
+    "interpretation": "No new judge score or author endorsement is claimed."
+  },
+  "attribution": {
+    "name": "MachineLearning-Nerd",
+    "email": "37579156+MachineLearning-Nerd@users.noreply.github.com",
+    "author_and_committer_required": true,
+    "co_author_trailers_allowed": false
+  }
+}
