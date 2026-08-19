@@ -85,6 +85,6 @@
     "EVIDENCE_MANIFEST.json",
     "verify_final.py"
   ],
-  "last_known_git_commit": "a7b44a5095a57e456e38f0899f8ad1236d1818fa",
-  "last_checkpoint": "2026-08-17"
+  "last_known_git_commit": "060e9449abcdce5af60b7b7ddf26e1a2941896a2",
+  "last_checkpoint": "2026-08-19T14:18:17+05:30"
 }
