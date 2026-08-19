@@ -41,8 +41,8 @@ Historical live score: 3/10. Projected 5–8/10 and best-supported 8/10 are fore
 - Per-claim contracts, raw outputs, checker outputs, controls, methods, source audits, and limitations are committed.
 - The dossier index is README.md; its supporting files are CLAIM_EVIDENCE.md,
   SOURCE_AUDIT.md, BRANCH_AUDIT.md, ENVIRONMENT.md, REPORT.md,
-  AUTHOR_THANK_YOU.md, CITATION.cff, claims.json, and
-  EVIDENCE_MANIFEST.json.
+  AUTHOR_THANK_YOU.md, CITATION.cff, claims.json,
+  reproduction_verdicts.json, and EVIDENCE_MANIFEST.json.
 - The raw evidence boundary is evidence/results.json, evidence/checker-output.json,
   evidence/control-output.json, and evidence/runtime.csv, with the mirrored
   evaluator copy under candidate_space/current/data/.
@@ -50,6 +50,7 @@ Historical live score: 3/10. Projected 5–8/10 and best-supported 8/10 are fore
   attribution, source and evidence hashes, claim ledger, and fresh-clone
   structure. It does not rerun the compute-heavy scientific campaign.
 - Literal printed claims are kept distinct from possible intended corrections.
+- `publication_allowed` is false for a complete reproduction or score; the historical 3/10 and 5–8/10 forecast remain provenance only.
 - Historical ORX branches are preserved under descriptive audit/release names after cleanup.
 - Reachable commit attribution is normalized to MachineLearning-Nerd.
 - The GitHub repository is renamed to icml26-consistent-adversarial-attacks-linear-classification.

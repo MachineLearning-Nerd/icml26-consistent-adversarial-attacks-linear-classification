@@ -37,7 +37,7 @@ uses that prefix.
 
 Every reachable pre-dossier commit has both author and committer set to:
 
-    MachineLearning-Nerd <37579156+MachineLearning-Nerd@users.noreply.github.com>
+    MachineLearning-Nerd <MachineLearning-Nerd@users.noreply.github.com>
 
 The dossier and checkpoint commits use the same identity. Co-author trailers
 are not used. The final verifier checks that no refs/original, legacy orx

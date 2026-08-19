@@ -2,7 +2,7 @@
   "schema_version": 2,
   "paper": "arXiv:2506.12454v1",
   "openreview_id": "PUIivg3GrO",
-  "phase": "dossier_published",
+  "phase": "published_and_verified",
   "next_action": "update_collection_tracker_and_continue_with_next_repository",
   "completed_milestones": [
     "pinned_arxiv_html_and_pdf_sources_and_hashes",
@@ -64,10 +64,27 @@
   },
   "canonical_identity": {
     "name": "MachineLearning-Nerd",
-    "email": "37579156+MachineLearning-Nerd@users.noreply.github.com"
+    "email": "MachineLearning-Nerd@users.noreply.github.com"
   },
   "published_dossier_commit": "a7b44a5095a57e456e38f0899f8ad1236d1818fa",
-  "publication_allowed": true,
+  "publication_allowed": false,
+  "overall_verdict": "SCOPED_REPRODUCTION_WITH_LITERAL_FALSIFICATIONS_AND_BLOCKED_EMPIRICAL_CLAIM",
+  "score_claim": false,
+  "official_author_endorsement": false,
+  "branch_count": 9,
+  "dossier_files": [
+    "CLAIM_EVIDENCE.md",
+    "SOURCE_AUDIT.md",
+    "ENVIRONMENT.md",
+    "REPORT.md",
+    "BRANCH_AUDIT.md",
+    "CITATION.cff",
+    "AUTHOR_THANK_YOU.md",
+    "claims.json",
+    "reproduction_verdicts.json",
+    "EVIDENCE_MANIFEST.json",
+    "verify_final.py"
+  ],
   "last_known_git_commit": "a7b44a5095a57e456e38f0899f8ad1236d1818fa",
   "last_checkpoint": "2026-08-17"
 }

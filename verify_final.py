@@ -15,9 +15,7 @@ EXPECTED_REPOSITORY = (
     "icml26-consistent-adversarial-attacks-linear-classification"
 )
 CANONICAL_NAME = "MachineLearning-Nerd"
-CANONICAL_EMAIL = (
-    "37579156+MachineLearning-Nerd@users.noreply.github.com"
-)
+CANONICAL_EMAIL = "MachineLearning-Nerd@users.noreply.github.com"
 EXPECTED_SOURCE_HTML_SHA = (
     "83b475d685ce1c7b0988d027f3ad3d8e0ff95afeeb583bdd58f0a31bca7f8696"
 )
@@ -57,6 +55,7 @@ REQUIRED_FILES = {
     "AUTHOR_THANK_YOU.md",
     "CITATION.cff",
     "claims.json",
+    "reproduction_verdicts.json",
     "EVIDENCE_MANIFEST.json",
     "verify_final.py",
     "AUTONOMOUS_STATE.json",
@@ -403,6 +402,26 @@ def verify_ledgers_and_state() -> None:
         fail("claims.json statuses are wrong")
     if claims.get("repository") != EXPECTED_REPOSITORY:
         fail("claims.json repository marker is wrong")
+    if (
+        claims.get("overall_verdict")
+        != "SCOPED_REPRODUCTION_WITH_LITERAL_FALSIFICATIONS_AND_BLOCKED_EMPIRICAL_CLAIM"
+        or claims.get("publication_allowed") is not False
+        or claims.get("score_claim") is not False
+        or claims.get("official_author_endorsement") is not False
+    ):
+        fail("claims.json publication boundary is wrong")
+    reproduction = read_json("reproduction_verdicts.json")
+    if (
+        reproduction.get("repository") != EXPECTED_REPOSITORY
+        or reproduction.get("overall_verdict")
+        != "SCOPED_REPRODUCTION_WITH_LITERAL_FALSIFICATIONS_AND_BLOCKED_EMPIRICAL_CLAIM"
+        or reproduction.get("publication_allowed") is not False
+        or reproduction.get("score_claim") is not False
+        or reproduction.get("official_author_endorsement") is not False
+        or [(row.get("id"), row.get("status")) for row in reproduction.get("claims", [])]
+        != [(row.get("id"), row.get("status")) for row in claims.get("claims", [])]
+    ):
+        fail("reproduction verdict boundary is wrong")
     paper = claims.get("paper", {})
     if paper.get("html_sha256") != EXPECTED_SOURCE_HTML_SHA:
         fail("claims.json HTML source hash is wrong")
@@ -414,6 +433,15 @@ def verify_ledgers_and_state() -> None:
         fail("state repository marker is wrong")
     if state.get("canonical_branch") != "main":
         fail("state canonical branch is wrong")
+    if (
+        state.get("publication_allowed") is not False
+        or state.get("overall_verdict")
+        != "SCOPED_REPRODUCTION_WITH_LITERAL_FALSIFICATIONS_AND_BLOCKED_EMPIRICAL_CLAIM"
+        or state.get("score_claim") is not False
+        or state.get("official_author_endorsement") is not False
+        or state.get("branch_count") != len(EXPECTED_BRANCHES)
+    ):
+        fail("state publication boundary is wrong")
     identity = state.get("canonical_identity", {})
     if identity.get("name") != CANONICAL_NAME:
         fail("state canonical identity is wrong")
@@ -432,6 +460,7 @@ def verify_ledgers_and_state() -> None:
     if state.get("phase") not in {
         "dossier_ready_for_publication",
         "dossier_published",
+        "published_and_verified",
     }:
         fail("state phase is not a dossier phase")
 
@@ -449,6 +478,8 @@ def verify_documentation() -> None:
         "REPORT.md",
         "CITATION.cff",
         "AUTHOR_THANK_YOU.md",
+        "claims.json",
+        "reproduction_verdicts.json",
         "EVIDENCE_MANIFEST.json",
         "VERIFIED",
         "FALSIFIED",
@@ -458,7 +489,12 @@ def verify_documentation() -> None:
         if marker not in readme:
             fail(f"README is missing marker {marker!r}")
     status = (ROOT / "STATUS.md").read_text(encoding="utf-8")
-    for marker in ("EVIDENCE_MANIFEST.json", "verify_final.py", "raw evidence boundary"):
+    for marker in (
+        "EVIDENCE_MANIFEST.json",
+        "verify_final.py",
+        "raw evidence boundary",
+        "reproduction_verdicts.json",
+    ):
         if marker not in status:
             fail(f"STATUS is missing marker {marker!r}")
     branch_audit = (ROOT / "BRANCH_AUDIT.md").read_text(encoding="utf-8")

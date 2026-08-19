@@ -26,6 +26,7 @@ The standardized audit record is split into small, reviewable files:
 - [ENVIRONMENT.md](ENVIRONMENT.md) records the fixed command, lockfile, evidence revision, seeds, and compute boundary.
 - [REPORT.md](REPORT.md) states the scoped decision and evaluation boundary.
 - [CITATION.cff](CITATION.cff) and [AUTHOR_THANK_YOU.md](AUTHOR_THANK_YOU.md) provide citation and author acknowledgement.
+- [claims.json](claims.json) and [reproduction_verdicts.json](reproduction_verdicts.json) provide machine-readable claim statuses, production paths, and evidence boundaries.
 - [EVIDENCE_MANIFEST.json](EVIDENCE_MANIFEST.json) content-addresses the
   published dossier and evidence inputs.
 - [verify_final.py](verify_final.py) performs fail-closed checks on a local or fresh clone.
@@ -33,6 +34,10 @@ The standardized audit record is split into small, reviewable files:
 The raw/checker/control package under [evidence](evidence) remains the
 scientific evidence. The dossier documents it and does not silently replace a
 printed formula with a plausible correction.
+
+`publication_allowed` is `false` for a complete paper reproduction or score:
+Claim 1 is verified only in its disclosed finite scope, Claims 2, 3, and 5
+are literal printed-formula falsifications, and Claim 4 remains blocked.
 
 ## Paper and provenance
 

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "repository": "MachineLearning-Nerd/icml26-consistent-adversarial-attacks-linear-classification",
+  "paper": {
+    "title": "On the existence of consistent adversarial attacks in high-dimensional linear classification",
+    "arxiv": "2506.12454v1",
+    "openreview": "PUIivg3GrO",
+    "authors": ["Matteo Vilucchio", "Lenka Zdeborová", "Bruno Loureiro"]
+  },
+  "overall_verdict": "SCOPED_REPRODUCTION_WITH_LITERAL_FALSIFICATIONS_AND_BLOCKED_EMPIRICAL_CLAIM",
+  "publication_allowed": false,
+  "score_claim": false,
+  "official_author_endorsement": false,
+  "claims": [
+    {
+      "id": "C1",
+      "status": "VERIFIED",
+      "production_path": "repro/src/verify.py::run_proposition_trials -> evidence/checker-output.json and evidence/control-output.json",
+      "scope": "Finite l2, dimension-64, strict non-boundary certificate; broader lq and equality-boundary proof is not replaced.",
+      "evidence": ["evidence/results.json", "evidence/checker-output.json", "evidence/control-output.json", ".openresearch/artifacts/claim_1/"]
+    },
+    {
+      "id": "C2",
+      "status": "FALSIFIED",
+      "production_path": "repro/src/theorem31.py::audit_theorem31 -> analytic, Monte Carlo, finite-dimension, and zero-budget controls",
+      "scope": "The printed Theorem 3.1 indicator disagrees with the definition-faithful event at positive budget; a plausible missing-sign correction is not substituted.",
+      "evidence": ["evidence/results.json", "evidence/checker-output.json", "evidence/control-output.json", ".openresearch/artifacts/claim_2/"]
+    },
+    {
+      "id": "C3",
+      "status": "FALSIFIED",
+      "production_path": "repro/src/latent_audit.py::audit_latent_theorems -> displayed-system and Appendix (119) comparison",
+      "scope": "The printed latent system omits announced primal definitions and conflicts with the appendix; the appendix repair is a control, not an author-confirmed theorem.",
+      "evidence": ["evidence/results.json", "evidence/checker-output.json", "evidence/control-output.json", ".openresearch/artifacts/claim_3/"]
+    },
+    {
+      "id": "C4",
+      "status": "BLOCKED",
+      "production_path": "repro/src/quantifier_audit.py::audit_claim4_falsification_eligibility plus four route audits",
+      "scope": "The Figure 5 trend has no unique source-faithful executable contract because loss, link, budget, tuning, seeds, threshold, uncertainty, and noise scaling are incomplete or inconsistent.",
+      "evidence": ["evidence/results.json", "evidence/checker-output.json", "evidence/control-output.json", ".openresearch/artifacts/claim_4/", "candidate_space/current/release/visibility-matrix.md"]
+    },
+    {
+      "id": "C5",
+      "status": "FALSIFIED",
+      "production_path": "repro/src/quantifier_audit.py::audit_theorem42_indicator -> four-correlation half-strip audit and zero-threshold control",
+      "scope": "The printed positive-threshold indicator omits a positive-probability half-strip; this does not solve a guessed repaired latent system.",
+      "evidence": ["evidence/results.json", "evidence/checker-output.json", "evidence/control-output.json", ".openresearch/artifacts/claim_5/"]
+    }
+  ]
+}

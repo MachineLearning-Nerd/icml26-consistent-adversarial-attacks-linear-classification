@@ -178,7 +178,7 @@
     },
     {
       "path": "BRANCH_AUDIT.md",
-      "sha256": "071bd1dbdeafa076dd396cf094db7116b51c2c3af327657bcb78cb7ffde2eb23"
+      "sha256": "7e562436b0b6e1e7179ada61816ad5196f4b404cdb3ce05b16ac82cc49ef2256"
     },
     {
       "path": "CITATION.cff",
@@ -194,7 +194,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "398cd62fd81336fd623fe0d6bb077a02830acc4c1fc9fdbdabb256ba7655cc52"
+      "sha256": "7af66344967f7ed8273cf0fddeadc2719ab7c8082d2b8b7bdaffd51b13390b32"
     },
     {
       "path": "REPORT.md",
@@ -206,7 +206,7 @@
     },
     {
       "path": "STATUS.md",
-      "sha256": "dd5e0d35bd80363abb3b400b651002e4c7bfae5dbecc32ddebd6bc0a849e1a63"
+      "sha256": "60824a1d045089195438d3123844c6f35e77ccf7af9140cd0d40c862963405ec"
     },
     {
       "path": "candidate_space/current/data/checker-output.json",
@@ -226,7 +226,11 @@
     },
     {
       "path": "claims.json",
-      "sha256": "46d8184577f7a030e14745e858f53aa459dd9ad62524741d0a105227f978c817"
+      "sha256": "b61c524c3525f848c0adaa1f1c5f7c92bbabb5480314173023f07429302142be"
+    },
+    {
+      "path": "reproduction_verdicts.json",
+      "sha256": "02ba7b965bcec79224f0319d9e78faa81f8513f843fb4b387b989ec933784896"
     },
     {
       "path": "evidence/checker-output.json",
@@ -290,7 +294,7 @@
     },
     {
       "path": "verify_final.py",
-      "sha256": "636af9c1712b3feef8c31f8c6611df7813a1605083abf83abcfdd164ea058c37"
+      "sha256": "05e0020fb2183336cb5075183abbb486028252caa94f9fbcb39d35a3dbf7cfb0"
     }
   ],
   "required_audit_files": [
@@ -405,7 +409,7 @@
   },
   "attribution": {
     "name": "MachineLearning-Nerd",
-    "email": "37579156+MachineLearning-Nerd@users.noreply.github.com",
+    "email": "MachineLearning-Nerd@users.noreply.github.com",
     "author_and_committer_required": true,
     "co_author_trailers_allowed": false
   }
